@@ -20,10 +20,10 @@ webfonts-icon -f[--files] -d[--dest] -c[--config] -e[--ext]
 
 |param|type|explain|
 |-----|----|-------|
-|files|string|Icons catalog name, default: <code>./svg/**/*.svg</code>|
-|dest|string|Directory name of output, default: <code>./fonts</code> |
-|config|object| default: <code>iconfont.config.js</code>, return "object"|
-|ext|string| Style file ext\'name, default: <code>.css</code>, |
+|files|string|Icons catalog name, example: <code>./svg/**/*.svg</code>|
+|dest|string|Directory name of output|
+|config|object| default: <code>webfonts.config.js</code>, return "object"|
+|ext|string| Style file ext\'name|
 
 
 ## API
@@ -46,7 +46,8 @@ Extended:
 
 |param|type|explain|
 |-----|----|-------|
-|files|string/pattern/array|glob type path value|
+|files|string/pattern/array|glob type path value, default: <code>./svg/**/*.svg</code>|
+|dest|string|Directory name of output, default: <code>./fonts</code> |
 |startCodepoint|number|default: 0xe600|
 |extName|string|Style file ext's name, default: .css|
 [@vusion/webfonts-generator](https://www.npmjs.com/package/@vusion/webfonts-generator)
@@ -58,7 +59,7 @@ Using <code>package.json</code>: <br><br>
 {
   "scripts": {
     ...,
-    "fonticon": "webfonts-icon -f ./svg/**/*.svg -d ./fonts"
+    "fonticon": "webfonts-icon -f ./svg/**/*.svg -d ./fonts -e .scss"
   }
 }
 ```

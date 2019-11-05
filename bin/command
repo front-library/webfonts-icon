@@ -10,18 +10,15 @@ const { version } = require('../package.json')
 commander.version(version)
   .option(
     '-f, --files [catalog name: string]',
-    'The svg icon catalog (current project) name, default: "./svg/**/*.svg".',
-    path.join('.', 'svg', '**', '*.svg')
+    'The svg icon catalog (current project) name, example: "./svg/**/*.svg".'
   )
   .option(
     '-d, --dest [output catalog: string]',
-    'Directory name of output name, default: "./fonts".',
-    path.join('.', 'fonts')
+    'Directory name of output name'
   )
   .option(
     '-e, --ext [output ext\'name: string]',
-    'Directory name of output name, default: ".css"',
-    '.css'
+    'Directory name of output name, default: ".css"'
   )
   .option(
     '-c, --config [file: string]',
@@ -42,7 +39,7 @@ commander.version(version)
       ...config || {},
       ...(options.files ? { files: options.files } : {}),
       ...(options.dest ? { dest: options.dest } : {}),
-      extName: options.ext
+      ...(options.ext ? { extName: options.ext } : {})
     }
 
     spinner = ora('Webfonts icon compile iconfont……')
