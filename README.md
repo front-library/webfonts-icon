@@ -30,18 +30,18 @@ webfonts-icon -f[--files] -d[--dest] -c[--config]
 Retrun Promise type.
 
 ```
-const iconfont = reqiure('webfonts-icon')
+const webfontsIcon = reqiure('webfonts-icon')
 
-iconfont([config]).then(config => {})
+webfontsIcon([config]).then(config => {})
 
 or:
 
-const compile = async () => { await iconfont([config]) }
+const compile = async () => { await webfontsIcon([config]) }
 ```
-## Reference
+## Config reference
 
 config item: <br><br>
-Extended files attribute： string | array <br><br>
+Extended files attribute： string | pattern | array <br><br>
 [@vusion/webfonts-generator](https://www.npmjs.com/package/@vusion/webfonts-generator)
 
 ## Scripts
