@@ -1,0 +1,46 @@
+const commander = require('commander')
+const ora = require('ora')
+const chalk = require('chalk')
+const path = require('path')
+const generator = require('../lib/generator')
+const { version } = require('../package.json')
+
+commander.version(version)
+  .option(
+    '-f, --files [catalog name: string]',
+    'The svg icon catalog (current project) name, default: "./svg/**/*.svg".',
+    path.join('.', 'svg', '**', '*.svg')
+  )
+  .option(
+    '-d, --dest [output catalog: string]',
+    'Directory name of output name, default: "./fonts".',
+    path.join('.', 'fonts')
+  )
+  .option(
+    '-c, --config [file: string]',
+    'The root (current project) settings config file.',
+    './webfonts.config.js'
+  )
+  .action(async options => {
+    let config
+    let spinner
+
+    try {
+      config = require(path.resolve(options.config))
+    } catch (error) {
+      // TODO
+    }
+
+    config = {
+      ...config || {},
+      ...(options.files ? { files: options.files } : {}),
+      ...(options.dest ? { dest: options.dest } : {})
+    }
+
+    spinner = ora('Webfonts icon compile iconfont……')
+    spinner.start()
+    await generator(config)
+    spinner.stop()
+    console.log(chalk.green(`Webfonts icon compile success, output: /${config.dest}`))
+  })
+  .parse(process.argv)

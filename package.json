@@ -1,0 +1,47 @@
+{
+  "name": "webfonts-icon",
+  "version": "1.0.0",
+  "description": "webfonts icon generator",
+  "main": "index.js",
+  "bin": {
+    "webfonts-icon": "./bin/command"
+  },
+  "scripts": {
+    "i": "npm install --registry http://registry.npmjs.org/",
+    "test": "node ./bin/command -f './test/**/*.svg'"
+  },
+  "bugs": {
+    "url": "https://github.com/front-library/webfonts-icon/issues"
+  },
+  "homepage": "https://github.com/front-library/webfonts-icon#readme",
+  "keywords": [
+    "fonts",
+    "icon",
+    "iconfont"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "manpacker"
+    ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": {
+    "name": "winterfete"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-manpacker": "^1.5.1"
+  },
+  "dependencies": {
+    "@vusion/webfonts-generator": "^0.6.0",
+    "chalk": "^2.4.2",
+    "commander": "^4.0.0",
+    "deepmerge": "^4.2.2",
+    "glob": "^7.1.5",
+    "ora": "^4.0.2",
+    "rimraf": "^3.0.0"
+  }
+}
