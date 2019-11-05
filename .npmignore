@@ -9,4 +9,5 @@
 .npmignore
 iconfont.config.js
 node_modules
+test
 package-lock.json
