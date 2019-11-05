@@ -15,7 +15,7 @@ npm i webfonts-icon -D
 Using the command line to generate font icons
 
 ```
-webfonts-icon -f[--files] -d[--dest] -c[--config]
+webfonts-icon -f[--files] -d[--dest] -c[--config] -e[--ext]
 ```
 
 |param|type|explain|
@@ -23,6 +23,7 @@ webfonts-icon -f[--files] -d[--dest] -c[--config]
 |files|string|Icons catalog name, default: <code>./svg/**/*.svg</code>|
 |dest|string|Directory name of output, default: <code>./fonts</code> |
 |config|object| default: <code>iconfont.config.js</code>, return "object"|
+|ext|string| Style file ext\'name, default: <code>.css</code>, |
 
 
 ## API
@@ -41,7 +42,13 @@ const compile = async () => { await webfontsIcon([config]) }
 ## Config reference
 
 config item: <br><br>
-Extended files attribute： string | pattern | array <br><br>
+Extended:
+
+|param|type|explain|
+|-----|----|-------|
+|files|string/pattern/array|glob type path value|
+|startCodepoint|number|default: 0xe600|
+|extName|string|Style file ext's name, default: .css|
 [@vusion/webfonts-generator](https://www.npmjs.com/package/@vusion/webfonts-generator)
 
 ## Scripts

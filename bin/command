@@ -19,6 +19,11 @@ commander.version(version)
     path.join('.', 'fonts')
   )
   .option(
+    '-e, --ext [output ext\'name: string]',
+    'Directory name of output name, default: ".css"',
+    '.css'
+  )
+  .option(
     '-c, --config [file: string]',
     'The root (current project) settings config file.',
     './webfonts.config.js'
@@ -36,7 +41,8 @@ commander.version(version)
     config = {
       ...config || {},
       ...(options.files ? { files: options.files } : {}),
-      ...(options.dest ? { dest: options.dest } : {})
+      ...(options.dest ? { dest: options.dest } : {}),
+      extName: options.ext
     }
 
     spinner = ora('Webfonts icon compile iconfont……')
