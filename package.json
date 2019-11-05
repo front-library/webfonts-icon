@@ -8,7 +8,7 @@
   },
   "scripts": {
     "i": "npm install --registry http://registry.npmjs.org/",
-    "test": "node ./bin/command -f './test/**/*.svg'"
+    "test": "node ./bin/command -f ./test/**/*.svg"
   },
   "bugs": {
     "url": "https://github.com/front-library/webfonts-icon/issues"
