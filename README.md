@@ -20,7 +20,7 @@ webfonts-icon -f[--files] -d[--dest] -c[--config]
 
 |param|type|explain|
 |-----|----|-------|
-|files|string|Icons catalog name, default: ./svg/**/*.svg |
+|files|string|Icons catalog name, default: <code>./svg/**/*.svg</code>|
 |dest|string|Directory name of output, default: <code>./fonts</code> |
 |config|object| default: <code>iconfont.config.js</code>, return "object"|
 
