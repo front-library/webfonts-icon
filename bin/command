@@ -41,8 +41,8 @@ commander.version(version)
       ...(options.dest ? { dest: options.dest } : {}),
       ...(options.ext ? { extName: options.ext } : {})
     }
-
     spinner = ora('Webfonts icon compile iconfont……')
+
     spinner.start()
     await generator(config)
     spinner.stop()
