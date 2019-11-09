@@ -31,12 +31,12 @@ Using <code>package.json</code>: <br><br>
 }
 ```
 
-| param  | type   | explain                                                   |
-| ------ | ------ | --------------------------------------------------------- |
-| files  | string | Icons catalog name, example: <code>./svg/\*_/_.svg</code> |
-| dest   | string | Directory name of output                                  |
-| config | object | default: <code>webfonts.config.js</code>, return "object" |
-| ext    | string | Style file ext\'name                                      |
+| param  | type   | explain                                                    |
+| ------ | ------ | ---------------------------------------------------------- |
+| files  | string | Icons catalog name, example: <code>./svg/\*_/_.svg</code>  |
+| dest   | string | Directory name of output                                   |
+| config | object | Config file path, default: <code>webfonts.config.js</code> |
+| ext    | string | Style file ext\'name                                       |
 
 ## API
 
